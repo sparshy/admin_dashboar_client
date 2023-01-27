@@ -1,8 +1,10 @@
 import React from 'react';
-import { LightModeOutlined, DarkModeOutlined, Search, Menu as MenuIcon } from '@mui/icons-material';
+import { LightModeOutlined, DarkModeOutlined, Search, Menu as MenuIcon, SettingsOutlined } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
 import { AppBar, IconButton, InputBase, Toolbar, useTheme } from '@mui/material';
 import FlexBetween from './FlexBetween';
+import { setMode } from 'state';
+
 
 
 
@@ -34,6 +36,17 @@ const Navbar = () => {
                         <Search/>
                     </IconButton>
                 </FlexBetween>
+            </FlexBetween>
+            {/**RIGHT SIDE */}
+            <FlexBetween gap="1.5rem">
+                <IconButton onClick={() => dispatch(setMode())}>
+                   { theme.palette.mode==='dark' ? (
+                   <DarkModeOutlined sx={{fontSize:"25px"}}   />): (
+                   <LightModeOutlined sx={{fontSize:"25px"}}  />)}
+                </IconButton>
+                <IconButton>
+                    <SettingsOutlined sx={{fontSize:"25px"}}  />
+                </IconButton>
             </FlexBetween>
         </Toolbar>
    </AppBar>
