@@ -148,7 +148,7 @@ const Sidebar = ({
                 }
                 const lcText = text.toLowerCase();
                 return (
-                  <ListItem key={text} disabledPadding>
+                  <ListItem key={text} disablePadding>
                     <ListItemButton
                       onClick={() => {
                         navigate(`/${lcText}`);
